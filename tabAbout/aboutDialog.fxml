@@ -1,0 +1,11 @@
+<?import javafx.scene.control.DialogPane?>
+
+<?import javafx.scene.control.Label?>
+<DialogPane fx:controller="sample.tabAbout.AboutController" xmlns:fx="http://javafx.com/fxml">
+    <headerText>
+        Thanks for checking this app out.
+    </headerText>
+    <content>
+        <Label> Some copyright rules are usually displayed here.</Label>
+    </content>
+</DialogPane>
