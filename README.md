@@ -1,7 +1,5 @@
 # RDB_Project
 
-#### Please Note That This Application Is Still In Development Phase
-
 ### Current Status of the Application
 <img width="646" alt="screen shot 2018-08-27 at 9 17 25 am" src="https://user-images.githubusercontent.com/34877218/44662197-06b11280-a9db-11e8-9884-b8ab353b7367.png">
 
