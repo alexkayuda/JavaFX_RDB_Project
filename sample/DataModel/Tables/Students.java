@@ -1,26 +1,29 @@
-package sample.datamodel;
+package sample.DataModel.Tables;
 
 
 import javafx.beans.property.SimpleStringProperty;
 
-public class Info {
+public class Students {
     private SimpleStringProperty _id;
     private SimpleStringProperty firstName;
     private SimpleStringProperty lastName;
-    private SimpleStringProperty email;
+    private SimpleStringProperty gpa;
+    private SimpleStringProperty major_id;
 
-    public Info() {
+    public Students() {
         _id = new SimpleStringProperty("");
         firstName = new SimpleStringProperty("");
         lastName = new SimpleStringProperty("");
-        email = new SimpleStringProperty("");
+        gpa = new SimpleStringProperty("");
+        major_id = new SimpleStringProperty("");
     }
 
-    public Info(String id, String firstName, String lastName, String email){
-        this._id.set(id);
+    public Students(String _id, String firstName, String lastName, String gpa, String major_id) {
+        this._id.set(_id);
         this.firstName.set(firstName);
         this.lastName.set(lastName);
-        this.email.set(email);
+        this.gpa.set(gpa);
+        this.major_id.set(major_id);
     }
 
     public String get_id() {
@@ -59,25 +62,38 @@ public class Info {
         this.lastName.set(lastName);
     }
 
-    public String getEmail() {
-        return email.get();
+    public String getGpa() {
+        return gpa.get();
     }
 
-    public SimpleStringProperty emailProperty() {
-        return email;
+    public SimpleStringProperty gpaProperty() {
+        return gpa;
     }
 
-    public void setEmail(String email) {
-        this.email.set(email);
+    public void setGpa(String gpa) {
+        this.gpa.set(gpa);
+    }
+
+    public String getMajor_id() {
+        return major_id.get();
+    }
+
+    public SimpleStringProperty major_idProperty() {
+        return major_id;
+    }
+
+    public void setMajor_id(String major_id) {
+        this.major_id.set(major_id);
     }
 
     @Override
     public String toString() {
-        return "Info{" +
+        return "Students{" +
                 "_id=" + _id +
                 ", firstName=" + firstName +
                 ", lastName=" + lastName +
-                ", email=" + email +
+                ", gpa=" + gpa +
+                ", major_id=" + major_id +
                 '}';
     }
 }

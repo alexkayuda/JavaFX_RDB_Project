@@ -1,0 +1,25 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane fx:controller="sample.studentAddEditDialog.AddEditDialogStudentController" xmlns:fx="http://javafx.com/fxml">
+    <headerText>
+        Fill in the information for the new Student
+    </headerText>
+    <content>
+        <GridPane vgap="10" hgap="10">
+
+            <Label text="Student's First Name: " GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="firstNameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Student's Last Name: " GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="lastNameField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Student's Major" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <ChoiceBox fx:id="choiceBox" GridPane.rowIndex="2" GridPane.columnIndex="1" prefWidth="150"/>
+
+            <Label text="Student's GPA" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="gpaField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        </GridPane>
+    </content>
+</DialogPane>

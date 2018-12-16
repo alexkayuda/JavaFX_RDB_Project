@@ -1,0 +1,11 @@
+CREATE
+    ALGORITHM = UNDEFINED
+    DEFINER = `root`@`localhost`
+    SQL SECURITY DEFINER
+VIEW `majorsview` AS
+    SELECT
+        `majors`.`Major_id` AS `Major_id`,
+        `majors`.`Major_Name` AS `Major_Name`,
+        `majors`.`Department_id` AS `Department_id`
+    FROM
+        `majors`

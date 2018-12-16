@@ -1,0 +1,108 @@
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:id="mainPanel" fx:controller="sample.MainStage.Controller">
+    <top>
+        <MenuBar>
+            <menus>
+                <Menu text="Student Center">
+
+                    <items>
+                        <MenuItem onAction="#displayFinalStudentsView" text="View List of Students"/>
+                    </items>
+
+                    <SeparatorMenuItem></SeparatorMenuItem>
+
+                    <items>
+                        <MenuItem onAction="#showAddStudentEntryDialog" text="Add New Student"/>
+                    </items>
+                    <items>
+                        <MenuItem onAction="#showEditStudentEntryDialog" text="Edit Existing" />
+                    </items>
+                    <items>
+                        <MenuItem onAction="#deleteStudentEntry" text="Delete Student" />
+                    </items>
+
+                    <SeparatorMenuItem></SeparatorMenuItem>
+
+                    <items>
+                        <MenuItem onAction="#showAddStudentToCourse" text="Enroll in a Course" />
+                    </items>
+                    <items>
+                        <MenuItem onAction="#showDropStudentFromCourse" text="Drop a Course" />
+                    </items>
+                </Menu>
+
+
+
+                <Menu text="Courses">
+                    <items>
+                        <MenuItem onAction="#displayListOfAllCoursesView" text="List of All Courses"/>
+                    </items>
+
+                    <items>
+                        <MenuItem onAction="#displayFinalCoursesView" text="Students Enrolled Into..."/>
+                    </items>
+
+                    <SeparatorMenuItem></SeparatorMenuItem>
+
+                    <items>
+                        <MenuItem onAction="#showAddCourseEntryDialog" text="Add New Course"/>
+                    </items>
+                    <items>
+                        <MenuItem onAction="#showEditCourseEntryDialog" text="Edit Existing Course" />
+                    </items>
+                    <items>
+                        <MenuItem onAction="#deleteCourseEntry" text="Delete Course" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+
+        <!--<fx:include source="./coursesTableContents.fxml" fx:id="coursesTable"/>-->
+        <!--<fx:include source="./studentsTableContents.fxml" fx:id="studentsTable"/>-->
+
+        <TableView fx:id="sampleTable">
+
+        </TableView>
+
+    </center>
+    <bottom>
+       <HBox alignment="CENTER_RIGHT" prefHeight="20">
+           <children>
+               <Label text="Total Number of Records: "></Label>
+               <TextField fx:id="recordCounter" text="199" prefWidth="50" disable="true"></TextField>
+           </children>
+       </HBox>
+    </bottom>
+</BorderPane>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

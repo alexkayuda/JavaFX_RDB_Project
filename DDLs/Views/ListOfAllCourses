@@ -1,0 +1,20 @@
+CREATE
+    ALGORITHM = UNDEFINED
+    DEFINER = `root`@`localhost`
+    SQL SECURITY DEFINER
+VIEW `listofallcourses` AS
+    SELECT
+        `courses`.`Course_id` AS `Course ID`,
+        `courses`.`Course_Attribute` AS `Course Attribute`,
+        `courses`.`Course_Name` AS `Course Name`,
+        `majors`.`Major_Name` AS `Major`,
+        `departments`.`Department_Name` AS `Department`,
+        `departments`.`Department_Chair` AS `Chair Person`
+    FROM
+        ((`courses`
+        JOIN `majors`)
+        JOIN `departments`)
+    WHERE
+        ((`courses`.`Major_id` = `majors`.`Major_id`)
+            AND (`majors`.`Department_id` = `departments`.`Department_id`))
+    ORDER BY `majors`.`Major_Name`

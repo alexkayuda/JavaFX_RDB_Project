@@ -1,0 +1,26 @@
+CREATE
+    ALGORITHM = UNDEFINED
+    DEFINER = `root`@`localhost`
+    SQL SECURITY DEFINER
+VIEW `finalcoursesview` AS
+    SELECT
+        `courses`.`Course_Attribute` AS `Course Attribute`,
+        `courses`.`Course_Name` AS `Course Name`,
+        `majors`.`Major_Name` AS `Major`,
+        `departments`.`Department_Name` AS `Department`,
+        COUNT(`courses`.`Course_id`) AS `counter`
+    FROM
+        (((`courses`
+        JOIN `majors`)
+        JOIN `departments`)
+        JOIN `studentscourses`)
+    WHERE
+        ((`courses`.`Major_id` = `majors`.`Major_id`)
+            AND (`courses`.`Course_id` = `studentscourses`.`Course_id`)
+            AND (`departments`.`Department_id` = (SELECT
+                `majors`.`Department_id`
+            FROM
+                `majors`
+            WHERE
+                (`courses`.`Major_id` = `majors`.`Major_id`))))
+    GROUP BY `Course Attribute` , `Course Name` , `Department` , `Major`

@@ -1,0 +1,9 @@
+CREATE TABLE `StudentsCourses` (
+  `Student_id` int(11) NOT NULL,
+  `Course_id` int(11) NOT NULL,
+  `Date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`Student_id`,`Course_id`),
+  KEY `course_id_idx` (`Course_id`),
+  CONSTRAINT `course_id` FOREIGN KEY (`Course_id`) REFERENCES `Courses` (`Course_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `student_id` FOREIGN KEY (`Student_id`) REFERENCES `Students` (`Student_id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1

@@ -1,0 +1,21 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `showCoursesStudentNotEntolledInto`(
+		in param integer)
+BEGIN
+
+    drop temporary table if exists sample;
+    drop temporary table if exists result;
+
+    create temporary table sample
+    select Courses.Course_id, Courses.Course_Attribute from Courses
+    left outer join StudentsCourses on StudentsCourses.Course_id = Courses.Course_id
+    where Student_id = param;
+
+    create  temporary table result
+    select Courses.Course_id as 'Course ID', Courses.Course_Name as 'Course Name'
+    from Courses
+    left outer join sample on Courses.Course_id = sample.Course_id
+    where sample.Course_id is null
+    order by Courses.Course_id asc;
+
+    select * from result;
+END

@@ -1,0 +1,7 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `showCoursesStudentEnrolledInto`(in param integer)
+BEGIN
+    select param as 'StudentID', false as 'Choice', Courses.Course_id, Courses.Course_Attribute, Courses.Course_Name
+    from Courses
+    left outer join StudentsCourses on StudentsCourses.Course_id = Courses.Course_id
+    where Student_id = param;
+END

@@ -1,0 +1,7 @@
+CREATE TABLE `Departments` (
+  `Department_id` int(11) NOT NULL AUTO_INCREMENT,
+  `Department_Prefix` varchar(45) NOT NULL,
+  `Department_Name` varchar(45) NOT NULL,
+  `Department_Chair` varchar(45) NOT NULL,
+  PRIMARY KEY (`Department_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1

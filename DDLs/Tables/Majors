@@ -1,0 +1,8 @@
+CREATE TABLE `Majors` (
+  `Major_id` int(11) NOT NULL AUTO_INCREMENT,
+  `Major_Name` varchar(45) NOT NULL,
+  `Department_id` int(11) NOT NULL,
+  PRIMARY KEY (`Major_id`),
+  KEY `department_id_idx` (`Department_id`),
+  CONSTRAINT `department_id` FOREIGN KEY (`Department_id`) REFERENCES `Departments` (`Department_id`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1

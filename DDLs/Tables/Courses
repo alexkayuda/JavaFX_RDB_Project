@@ -1,0 +1,9 @@
+CREATE TABLE `Courses` (
+  `Course_id` int(11) NOT NULL AUTO_INCREMENT,
+  `Major_id` int(11) NOT NULL,
+  `Course_Attribute` varchar(45) NOT NULL,
+  `Course_Name` varchar(45) NOT NULL,
+  PRIMARY KEY (`Course_id`),
+  KEY `major_id_idx` (`Major_id`),
+  CONSTRAINT `major_id_courses` FOREIGN KEY (`Major_id`) REFERENCES `Majors` (`Major_id`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1

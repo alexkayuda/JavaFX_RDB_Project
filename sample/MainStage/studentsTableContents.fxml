@@ -1,0 +1,40 @@
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.control.*?>
+
+<TableView fx:id="studentsTable" xmlns:fx="http://javafx.com/fxml" fx:controller="sample.MainStage.Controller">
+    <columnResizePolicy>
+        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+    </columnResizePolicy>
+    <columns>
+        <TableColumn sortable="true" text="Student ID">
+            <cellValueFactory>
+                <PropertyValueFactory property="id" />
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn sortable="true" text="Full Name">
+            <cellValueFactory>
+                <PropertyValueFactory property="fullName" />
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn sortable="true" text="GPA">
+            <cellValueFactory>
+                <PropertyValueFactory property="gpa" />
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn sortable="true" text="Major">
+            <cellValueFactory>
+                <PropertyValueFactory property="major" />
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn sortable="true" text="Department">
+            <cellValueFactory>
+                <PropertyValueFactory property="department" />
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn sortable="true" text="Department's Chair">
+            <cellValueFactory>
+                <PropertyValueFactory property="departmentChair" />
+            </cellValueFactory>
+        </TableColumn>
+    </columns>
+</TableView>

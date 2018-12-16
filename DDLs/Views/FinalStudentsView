@@ -1,0 +1,22 @@
+CREATE
+    ALGORITHM = UNDEFINED
+    DEFINER = `root`@`localhost`
+    SQL SECURITY DEFINER
+VIEW `finalstudentsview` AS
+    (SELECT
+        `students`.`Student_id` AS `Student_id`,
+        CONCAT(`students`.`Student_FirstName`,
+                ' ',
+                `students`.`Student_LastName`) AS `Full Name`,
+        `students`.`Student_GPA` AS `GPA`,
+        `majors`.`Major_Name` AS `Major_Name`,
+        `departments`.`Department_Name` AS `Department Name`,
+        `departments`.`Department_Chair` AS `Chair Person`
+    FROM
+        ((`students`
+        JOIN `majors`)
+        JOIN `departments`)
+    WHERE
+        ((`students`.`Major_id` = `majors`.`Major_id`)
+            AND (`majors`.`Department_id` = `departments`.`Department_id`))
+    ORDER BY `students`.`Student_id`)

@@ -1,0 +1,22 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane fx:controller="sample.coursesAddEditDialog.AddEditDialogCoursesController" xmlns:fx="http://javafx.com/fxml">
+    <headerText>
+        Fill in the information about a new Course
+    </headerText>
+    <content>
+        <GridPane vgap="10" hgap="10">
+
+            <Label text="Course Name: " GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="courseNameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Department This Course Belongs To:" GridPane.rowIndex="1" GridPane.columnIndex="0" wrapText="true"/>
+            <ChoiceBox fx:id="choiceBox" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="150" onAction="#generateCourseAttribute"/>
+
+            <Label text="Generated Course Attribute: " GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="courseAttributeField" editable="false" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        </GridPane>
+    </content>
+</DialogPane>

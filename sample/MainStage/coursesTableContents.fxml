@@ -1,0 +1,35 @@
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.control.*?>
+
+<TableView fx:id="coursesTable" xmlns:fx="http://javafx.com/fxml" fx:controller="sample.MainStage.Controller">
+    <columnResizePolicy>
+        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+    </columnResizePolicy>
+    <columns>
+        <TableColumn sortable="true" text="Course Attribute">
+            <cellValueFactory>
+                <PropertyValueFactory property="courseAttribute" />
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn sortable="true" text="Course Name">
+            <cellValueFactory>
+                <PropertyValueFactory property="courseName"/>
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn sortable="true" text="Major">
+            <cellValueFactory>
+                <PropertyValueFactory property="major" />
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn sortable="true" text="Department">
+            <cellValueFactory>
+                <PropertyValueFactory property="department" />
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn sortable="true" text="# of Students Enrolled">
+            <cellValueFactory>
+                <PropertyValueFactory property="numberOfStudentsEnrolled" />
+            </cellValueFactory>
+        </TableColumn>
+    </columns>
+</TableView>
